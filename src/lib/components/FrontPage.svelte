@@ -16,4 +16,10 @@
         display: grid;
         margin: auto;
     }
+
+ @media (max-width: 600px) {
+        .sections {
+            width: 95%;
+        }
+    }
 </style>

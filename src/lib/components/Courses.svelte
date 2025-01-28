@@ -29,7 +29,7 @@
         </ul>
 </div>
 
-<div>
+<div id="last">
 <div class="section_child">
     <span class="bold">arts</span>
         <ul>
@@ -97,16 +97,17 @@
             text-decoration: underline;
         }
     }
-
-    @media (max-width: 600px) {
+    @media (max-width: 450px) {
         .sections {
-            width: 90%;
-            grid-template-columns: 1fr;
-            grid-template-rows: auto;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto;
         }
-        .section_child:nth-child(3) {
-            grid-column: auto;
-            grid-row: auto;
+        .section_child:nth-child(3),
+        .section_child:nth-child(4) {
+            grid-column: span 1;
+        }
+        #last {
+            display: contents;
         }
     }
 </style>
