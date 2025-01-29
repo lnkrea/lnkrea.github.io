@@ -1,10 +1,3 @@
-<script>
-  // Install sass by running: npm install -D sass
-</script>
-
-<main>
-<h3>archives</h3>
-<div class="sections">
 <div class="section_child">
     <span class="bold">mathematics and sciences</span>
         <ul>
@@ -40,37 +33,14 @@
 <div class="section_child">
     <span class="bold">miscellaneous</span>
         <ul>
-            <li><a href="/news">news🔥</a></li>
+            <li><a href="/news">news</a></li>
             <li><a href="/travel">travel</a></li>
-            <li><a href="/lit">literature</a></li>
         </ul>
 </div>
 </div>
-</div>
-</main>
 
 
 <style lang="scss">
-    main {
-        border: var(--border-dark);
-        background-color: #fff;
-        margin: auto;
-        font-size: 0.9em;
-    }
-    h3 {
-        padding: 10px;
-        margin: 0;
-        color: var(--dark);
-        font-weight: 500 !important;
-        background: rgb(243,161,214);
-        background: linear-gradient(0deg, rgb(243, 161, 193) 85%, rgb(255, 210, 220) 100%);
-    }
-    .sections {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: auto auto;
-        padding: 10px;
-    }
     .section_child:nth-child(3) {
         grid-column: 3;
         grid-row: span 2;

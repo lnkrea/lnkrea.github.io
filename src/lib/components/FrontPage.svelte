@@ -1,12 +1,20 @@
 <script>
     import Search from "./Search.svelte";
-    import Courses from "./Courses.svelte";
+    import Board from "./Board.svelte";
+    import BoardCourse from "./BoardCourse.svelte";
 </script>
 
 
 <div class="sections">
 <Search></Search>
-<Courses></Courses>
+
+<Board header="archives">
+    <BoardCourse></BoardCourse>
+</Board>
+
+<Board header="miscellaneous">
+    <BoardCourse />
+</Board>
 </div>
 
 
@@ -20,6 +28,11 @@
  @media (max-width: 600px) {
         .sections {
             width: 95%;
+        }
+    }
+ @media (max-width: 400px) {
+        .sections {
+            width: 90%;
         }
     }
 </style>
