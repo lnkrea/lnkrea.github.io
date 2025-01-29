@@ -1,17 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap');
+
 :root {
     --border-dark: 0.12em solid #803c67;
     --dark: #803c67;
 }
 
-/* Import Inter font from Google Fonts */
-/* @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap');
-
-/* Reset box model and margin */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+
+  font-family: "Ubuntu Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
 ::selection {
@@ -22,8 +23,5 @@
 html {
   height: 100%;
   width: 100%;
-  font-family: "Ubuntu Sans", '', sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
   background-color: #F6E7F0;
 }
