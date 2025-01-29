@@ -14,21 +14,14 @@
     background-color: #f0d5e0;
     padding: 4px;
     font-size: 0.75em;
-    font-weight: 100;
+    font-weight: 200;
     border-bottom: 1px solid #5d2639;
   }
   a {
     text-decoration: none;
+    margin: 2px;
   }
   a:hover {
     text-decoration: underline;
-    cursor: pointer;
-  }
-  a:active {
-    color: #780a2d;
-    background-color: white;
-  }
-  a:visited {
-    color: #886671;
   }
 </style>
