@@ -1,15 +1,23 @@
 <script>
     export let header = "boards";
-  </script>
+    let showSections = true;
+
+    function toggleSections() {
+        showSections = !showSections;
+    }
+</script>
   
-  <main>
-    <h3>{header}</h3>
-    <div class="sections">
-      <slot></slot>
+<main>
+    <header>
+        <h3>{header}</h3>
+        <button on:click={toggleSections}>+</button>
+    </header>
+    <div class="sections" style="display: {showSections ? 'grid' : 'none'};">
+        <slot></slot>
     </div>
-  </main>
+</main>
   
-  <style lang="scss">
+<style lang="scss">
     main {
         border: var(--border-dark);
         background-color: #fff;
@@ -17,13 +25,29 @@
         font-size: 0.9em;
         width: 100%;
     }
-    h3 {
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgb(243,161,214);
+        background: linear-gradient(0deg, #f3a1c1 85%, rgb(255, 210, 220) 100%);
         padding: 10px;
+        width: 100%;
+    }
+    button {
+      text-align: right;
+        background: rgb(243,161,214);
+        color: #284138;
+        background: linear-gradient(0deg, #5db192bb 1%, #7fbeb2 85%, rgb(210, 254, 255) 100%);
+        border-radius: 2px;
+        padding: 0 4px;
+        border: 1px solid #284138;
+        font-weight: 600;
+    }
+    h3 {
         margin: 0;
         color: var(--dark);
         font-weight: 500 !important;
-        background: rgb(243,161,214);
-        background: linear-gradient(0deg, #f3a1c1 85%, rgb(255, 210, 220) 100%);
     }
     .sections {
         display: grid;
@@ -50,9 +74,6 @@
     }
     a {
       color: var(--dark);
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
+      text-decoration: none;    }    a:hover {      text-decoration: underline;
     }
   </style>
