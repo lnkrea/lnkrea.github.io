@@ -2,6 +2,7 @@
     import Search from "./Search.svelte";
     import Board from "./Board.svelte";
     import BoardCourse from "./BoardCourse.svelte";
+	import BoardAlmanac from "./BoardAlmanac.svelte";
 </script>
 
 
@@ -12,8 +13,8 @@
     <BoardCourse></BoardCourse>
 </Board>
 
-<Board header="miscellaneous">
-    <BoardCourse />
+<Board header="calendar ">
+    <BoardAlmanac />
 </Board>
 </div>
 

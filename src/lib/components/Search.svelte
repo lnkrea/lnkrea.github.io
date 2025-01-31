@@ -1,8 +1,8 @@
 <script>
-
+    export let placeholder = "search for a course";
 </script>
 
-<input type="text" placeholder="search for a course" />
+<input type="text" placeholder={placeholder} />
 
 <style lang="scss">
     input {

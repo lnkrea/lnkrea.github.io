@@ -1,16 +1,16 @@
 <script>
   import Course from './Course.svelte';
-  export let courses = [];
+  // export let courses = [];
 </script>
 
 <main>
-  <div class="grid">
+  <!-- <div class="grid">
     {#each courses as course (course.id)}
       <div class="grid-item">
         <Course {course} />
       </div>
     {/each}
-  </div>
+  </div> -->
 </main>
 
 <style>

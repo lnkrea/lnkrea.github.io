@@ -15,7 +15,7 @@
     padding: 4px;
     font-size: 0.75em;
     font-weight: 200;
-    border-bottom: 1px solid #5d2639;
+		border-bottom: var(--border-dark);
   }
   a {
     text-decoration: none;

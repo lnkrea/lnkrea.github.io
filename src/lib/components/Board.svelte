@@ -38,7 +38,7 @@
       text-align: right;
         background: rgb(243,161,214);
         color: #284138;
-        background: linear-gradient(0deg, #5db192bb 1%, #7fbeb2 85%, rgb(210, 254, 255) 100%);
+        background: linear-gradient(0deg, #5db192bb 1%, #7fbeb2 55%, rgb(210, 254, 255) 100%);
         border-radius: 2px;
         padding: 0 4px;
         border: 1px solid #284138;

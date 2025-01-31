@@ -1,28 +1,11 @@
-<script>
-  import { Link } from 'svelte-routing';
-</script>
-
 <div class="section_child">
-    <span class="bold">mathematics and sciences</span>
+    <span class="bold">Food</span>
         <ul>
-            <li><Link to="/math">mathematics</Link></li>
-            <li><Link to="/cs">computers</Link></li>
-            <li><Link to="/phy">physics</Link></li>
-            <li><Link to="/chem">chemistry</Link></li>
-            <li><Link to="/bio">biology</Link></li>
-        </ul>
-</div>
-
-<div class="section_child">
-    <span class="bold">social sciences</span>
-        <ul>
-            <li><Link to="/econ">economics</Link></li>
-            <li><Link to="/his">history</Link></li>
-            <li><Link to="/pol">politics</Link></li>
-            <li><Link to="/psyc">psychology</Link></li>
-            <li><Link to="/soc">sociology</Link></li>
-            <li><Link to="/bus">business</Link></li>
-            <li><Link to="/env">environment</Link></li>
+            <li><a href="/mess">mess</a></li>
+            <li><a href="/narsee">narsee</a></li>
+            <li><a href="/copa mocha">copa </a></li>
+            <li><a href="/cravory">cravory</a></li>
+            <li><a href="/pjr">pjr</a></li>
         </ul>
 </div>
 
@@ -30,15 +13,15 @@
 <div class="section_child">
     <span class="bold">arts</span>
         <ul>
-            <li><Link to="/lit">literature</Link></li>
-            <li><Link to="/ga">global arts</Link></li>
+            <li><a href="/lit">literature</a></li>
+            <li><a href="/ga">global arts</a></li>
         </ul>
 </div>
 <div class="section_child">
     <span class="bold">miscellaneous</span>
         <ul>
-            <li><Link to="/news">news🔥</Link></li>
-            <li><Link to="/travel">travel</Link></li>
+            <li>convenience store</li>
+            <li><a href="/library">library</a></li>
         </ul>
 </div>
 </div>
