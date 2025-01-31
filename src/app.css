@@ -1,28 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap');
 
 :root {
-    --main-border-dark: 0.12em solid #803c67;
-    --main-dark: #803c67;
-    --main-bg: #F6E7F0;
+	--main-border-dark: 2px solid #987070;
+	--main-dark: #61363f;
+	--main-bg: #f6eaea;
+	--main-gradient: linear-gradient(
+		0deg,
+		rgba(255, 181, 162, 0.85) 0%,
+		rgba(255, 205, 178, 1) 40%,
+		rgba(255, 205, 178, 1) 90%,
+		rgba(255, 234, 222, 1) 100%
+	);
 }
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 
-  font-family: "Ubuntu Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-}
-
-::selection {
-  background: rgba(142, 0, 61, 0.5);
-  color: #fff;
+	font-family: 'Ubuntu Sans', sans-serif;
+	font-optical-sizing: auto;
+	font-style: normal;
 }
 
 html {
-  height: 100%;
-  width: 100%;
-  background-color: #F6E7F0;
+	height: 100%;
+	width: 100%;
+	background-color: var(--main-bg);
+}
+
+::selection {
+	background: rgba(157, 0, 81, 0.4);
+	color: #fff;
 }

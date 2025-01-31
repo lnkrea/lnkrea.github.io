@@ -42,7 +42,7 @@
         border-radius: 2px;
         padding: 0 4px;
         border: 1px solid #284138;
-        font-weight: 600;
+        font-weight: 500;
     }
     h3 {
         margin: 0;
@@ -72,8 +72,11 @@
       font-weight: bold;
       text-decoration: underline;
     }
-    a {
+    Link {
       color: var(--dark);
-      text-decoration: none;    }    a:hover {      text-decoration: underline;
+      text-decoration: none;
     }
-  </style>
+    Link:hover {
+      text-decoration: underline;
+    }
+</style>
