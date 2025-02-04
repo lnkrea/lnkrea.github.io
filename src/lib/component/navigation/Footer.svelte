@@ -23,7 +23,7 @@
 			padding: 0.4em;
 			background: var(--main-gradient);
 			cursor: pointer;
-			font-size: 0.8em;
+			font-size: 1rem;
 			color: var(--main-dark);
 		}
 

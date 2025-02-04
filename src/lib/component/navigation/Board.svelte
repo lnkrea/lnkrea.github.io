@@ -1,13 +1,13 @@
-<script>
-    export let heading = "board";
+<script lang="ts">
+	export let heading: string;
 
-	let is_shown = true;
-</script>
+	export let is_shown: boolean = true;
+	</script>
 
 <main>
-	<header>
+	<header on:click={() => (is_shown = !is_shown)}>
 		<h3>{heading}</h3>
-		<button on:click={() => (is_shown = !is_shown)}>
+		<button>
 			{is_shown ? '-' : '+'}
 		</button>
 	</header>
@@ -21,7 +21,7 @@
 
 <style lang="scss">
 	main {
-		margin-bottom: 1em;
+		margin-bottom: 1rem;
 		border: var(--main-border-dark);
 		background-color: #fff;
 		header {
@@ -30,12 +30,13 @@
 			align-items: center;
 			background: rgb(241, 158, 138);
 			background: var(--main-gradient);
-			padding: 0.6em;
+			font-size: 1.6rem;
+			padding: 1rem;
 			width: 100%;
 			h3 {
 				margin: 0;
 				color: var(--main-dark);
-				font-weight: 500 !important;
+				font-weight: 600;
 			}
 			button {
 				text-align: center;
@@ -46,17 +47,19 @@
 				padding: 0 4px;
 				border: 1px solid #284138;
 				font-weight: 600;
-                width: 1.5em;
+				width: 1.5em;
 			}
 		}
 	}
 	div {
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
-		grid-template-rows: auto auto;
-		padding: 0.6em;
+		// 	display: grid;
+		// 	// grid-template-columns: 1fr 1fr 1fr;
+		// 	grid-template-rows: auto auto;
+		padding: 1.1rem;
 
 		font-size: 0.9em;
-        color: var(--main-dark);
+		color: var(--main-dark);
+
+		font-size: 1.4rem;
 	}
 </style>

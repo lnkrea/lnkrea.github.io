@@ -1,17 +1,41 @@
-<script>
-    export let name = "anon";
-    export let course_name = "course";
-    export let date_posted = "date";
+<script lang="ts">
+	export let name = 'anon';
+	export let course_name = 'how the fucj';
+	export let date_posted = 'date';
 
-    export let diff = "0"; 
-    export let wisdom = "0";
-    export let quality = "0";
+	export let quality: number = 0;
+	export let diff: number = 0;
+	export let wisdom: number = 0;
 
-    export let grade = "A";
-    export let take_again = "yes";
-    export let credits = "4";
+	export let grade = 'A';
+	export let batch = '2022';
+	export let credits = 4;
+	export let take_again = true;
 
-    export let not_brief = "This is a review";
+	export let not_brief = 'This is a review';
+
+	$: quality_color =
+		quality == 1
+			? 'worst'
+			: quality == 2
+				? 'bad'
+				: quality == 3
+					? 'okay'
+					: quality == 4
+						? 'good'
+						: 'best';
+	$: diff_color =
+		diff == 1 ? 'worst' : diff == 2 ? 'bad' : diff == 3 ? 'okay' : diff == 4 ? 'good' : 'best';
+	$: wisdom_color =
+		wisdom == 1
+			? 'worst'
+			: wisdom == 2
+				? 'bad'
+				: wisdom == 3
+					? 'okay'
+					: wisdom == 4
+						? 'good'
+						: 'best';
 </script>
 
 <div class="review">
@@ -23,17 +47,17 @@
 
 	<div class="grid">
 		<div class="boxes">
-			<div>
+			<div class={quality_color}>
 				<h2>{quality}</h2>
 				<p>quality</p>
 			</div>
 
-			<div>
+			<div class={diff_color}>
 				<h2>{diff}</h2>
 				<p>difficulty</p>
 			</div>
 
-			<div>
+			<div class={wisdom_color}>
 				<h2>{wisdom}</h2>
 				<p>wisdom</p>
 			</div>
@@ -46,17 +70,29 @@
 					<p>grade</p>
 				</div>
 				<div>
-					<h3>{credits}</h3>
-                    <p>credits</p>
+					<h3>{batch}</h3>
+					<p>batch</p>
 				</div>
 				<div>
-					<h3>{take_again}</h3>
+					<h3>{credits}</h3>
+					<p>credits</p>
+				</div>
+				<div>
+					<h3>
+						{#if take_again}
+							yes
+						{:else}
+							no
+						{/if}
+					</h3>
 					<p>would take again</p>
 				</div>
 			</div>
 
 			<div class="not__brief">
+				<p>
 					{not_brief}
+				</p>
 			</div>
 		</div>
 	</div>
@@ -64,14 +100,12 @@
 
 <style lang="scss">
 	.review {
-		width: 480px;
+		width: 100%;
 		border: var(--main-border-dark);
-		margin: 0.8em;
 
 		header {
 			display: flex;
 			justify-content: space-between;
-			/* align-items: center; */
 			color: var(--main-dark);
 			background: rgb(241, 158, 138);
 			background: var(--main-gradient);
@@ -82,14 +116,32 @@
 
 		.grid {
 			display: grid;
-			grid-template-columns: 1fr 4fr;
+			grid-template-columns: 1fr 5fr;
 
 			.boxes {
 				display: flex;
 				flex-direction: column;
-
-				background-color: rgba(255, 0, 93, 0.466);
 				border-right: var(--main-border-dark);
+
+				.worst {
+					background-color: #9d0006;
+				}
+
+				.bad {
+					background-color: #9d5400;
+				}
+
+				.okay {
+					background-color: #d1b24b;
+				}
+
+				.good {
+					background-color: #6a8429;
+				}
+
+				.best {
+					background-color: #076678;
+				}
 
 				div {
 					border-bottom: var(--main-border-dark);
@@ -120,15 +172,18 @@
 					display: flex;
 					justify-content: space-around;
 					background-color: #fff;
-                    align-items: center;
-                    border-bottom: var(--main-border-dark);
+					align-items: center;
+					border-bottom: var(--main-border-dark);
 				}
 
-                .not__brief {
-                    padding: 0.9em;
-                    font-size: 0.85em;
-                    background-color: #fff;
-                }
+				.not__brief {
+					padding: 0.9em;
+					font-size: 0.85em;
+					background-color: #fff;
+					p {
+
+					}
+				}
 			}
 		}
 	}

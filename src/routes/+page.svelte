@@ -2,7 +2,6 @@
 	import '../app.css';
 	import Search from '$lib/component/Search.svelte';
 	import Board from '$lib/component/navigation/Board.svelte';
-	import Form from '$lib/component/forms/Form.svelte';
 </script>
 
 <main>
@@ -17,44 +16,46 @@
 	<hr />
 
 	<Board heading="archives">
-		<div class="section_child">
-			<span class="bold">mathematics and sciences</span>
-			<ul>
-				<li><a href="ar/math/">mathematics</a></li>
-				<li><a href="ar/cs">computers</a></li>
-				<li><a href="ar/phy">physics</a></li>
-				<li><a href="ar/chem">chemistry</a></li>
-				<li><a href="ar/bio">biology</a></li>
-			</ul>
-		</div>
-
-		<div class="section_child">
-			<span class="bold">social sciences</span>
-			<ul>
-				<li><a href="ar/econ">economics</a></li>
-				<li><a href="ar/his">history</a></li>
-				<li><a href="ar/pol">politics</a></li>
-				<li><a href="ar/psyc">psychology</a></li>
-				<li><a href="ar/soc">sociology</a></li>
-				<li><a href="ar/bus">business</a></li>
-				<li><a href="ar/env">environment</a></li>
-			</ul>
-		</div>
-
-		<div id="last">
+		<div class="grid">
 			<div class="section_child">
-				<span class="bold">arts</span>
+				<span class="bold">mathematics and sciences</span>
 				<ul>
-					<li><a href="/lit">literature</a></li>
-					<li><a href="/ga">global arts</a></li>
+					<li><a href="ar/math/">mathematics</a></li>
+					<li><a href="ar/cs">computers</a></li>
+					<li><a href="ar/phy">physics</a></li>
+					<li><a href="ar/chem">chemistry</a></li>
+					<li><a href="ar/bio">biology</a></li>
 				</ul>
 			</div>
+
 			<div class="section_child">
-				<span class="bold">miscellaneous</span>
+				<span class="bold">social sciences</span>
 				<ul>
-					<li><a href="/news">news</a></li>
-					<li><a href="/travel">travel</a></li>
+					<li><a href="ar/econ">economics</a></li>
+					<li><a href="ar/his">history</a></li>
+					<li><a href="ar/pol">politics</a></li>
+					<li><a href="ar/psyc">psychology</a></li>
+					<li><a href="ar/soc">sociology</a></li>
+					<li><a href="ar/bus">business</a></li>
+					<li><a href="ar/env">environment</a></li>
 				</ul>
+			</div>
+
+			<div id="last">
+				<div class="section_child">
+					<span class="bold">arts</span>
+					<ul>
+						<li><a href="/lit">literature</a></li>
+						<li><a href="/ga">global arts</a></li>
+					</ul>
+				</div>
+				<div class="section_child">
+					<span class="bold">miscellaneous</span>
+					<ul>
+						<li><a href="/news">news</a></li>
+						<li><a href="/travel">travel</a></li>
+					</ul>
+				</div>
 			</div>
 		</div>
 	</Board>
@@ -79,8 +80,6 @@
 			</ul>
 		</div>
 	</Board>
-
-	<Form />
 </main>
 
 <style lang="scss">
@@ -91,7 +90,6 @@
 		input {
 			margin: -4px 4px 0px 8px;
 		}
-
 	}
 	h1 {
 		color: var(--main-dark);
@@ -99,10 +97,21 @@
 		margin: 1em auto 0.5em auto;
 	}
 	hr {
-        background-color: #ffffff !important;
+		background-color: #ffffff !important;
 		margin: 4em auto;
-        border-top: 1px solid #ff015e;
-        // opacity: 0;
+		border-top: 1px solid #ff015e;
+		// opacity: 0;
+	}
+
+	.grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: auto auto;
+	}
+	 @media (max-width: 600px) {
+		.grid {
+			grid-template-columns: 1fr 1fr;
+		}
 	}
 
 	.section_child:nth-child(3) {
@@ -112,6 +121,9 @@
 	.section_child {
 		// padding: 10px;
 		color: var(--dark);
+		// 	display: grid;
+		// 	// grid-template-columns: 1fr 1fr 1fr;
+		// 	grid-template-rows: auto auto;
 		ul {
 			list-style-type: none;
 			margin-bottom: 12px;
@@ -133,11 +145,4 @@
 		}
 	}
 
-	@media (max-width: 600px) {
-		.section_child {
-			grid-column: 2;
-			grid-row: span 2;
-			gap: 10px;
-		}
-	}
 </style>

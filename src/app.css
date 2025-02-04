@@ -11,6 +11,15 @@
 		rgba(255, 205, 178, 1) 90%,
 		rgba(255, 234, 222, 1) 100%
 	);
+	--blue-border: 2px solid #333a5ad8;
+
+	--blue-gradient: linear-gradient(180deg, rgba(213,225,255,1) 0%, rgba(194,203,224,1) 8%, rgba(158,180,221,1) 100%);
+	--blue-gradient-selected: linear-gradient(
+		180deg,
+		rgba(59, 78, 116, 1) 0%,
+		rgba(81, 101, 150, 1) 21%,
+		rgb(131, 153, 195) 100%
+	);
 }
 
 * {
@@ -27,6 +36,8 @@ html {
 	height: 100%;
 	width: 100%;
 	background-color: var(--main-bg);
+
+	font-size: 62.5%;
 }
 
 ::selection {
