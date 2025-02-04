@@ -12,6 +12,38 @@
 		'sunday'
 	];
 	export let menus: { [key: string]: string[][] } = {
+		sunday: [
+			[
+				'Pav',
+				'Bhaji',
+				'Onion & Lemon',
+				'Boiled Corn',
+				'Chocos',
+				'Boiled Egg',
+				'Tea/Coffee/Milk',
+				'Watermelon'
+			],
+			[
+				'Three Bean Salad',
+				'Chole Masala',
+				'Mix Veg Sambar(Pumpkin)',
+				'Steamed Rice',
+				'Puri',
+				'Masala Butter Milk',
+				'Fryums/Pickle'
+			],
+			[
+				'Onion/Cucumber/Lemon',
+				'Fresh Lime Soda(Sweet and Salt)',
+				'Paneer Dum Biryani',
+				'Hyderabad Chicken Biryani',
+				'Mirchi Ka salan',
+				'Bengali Khichdi',
+				'Mix Veg Raita',
+				'Fryums'
+			],
+			['Veg Macaroni']
+		],
 		monday: [
 			[
 				'Masala Idli & vada',
@@ -37,15 +69,12 @@
 				'Kosambari Salad'
 			],
 			[
-				'',
 				'Methi Matar Malai',
 				'Egg Curry',
 				'Tomato Pappu',
-				' - ',
 				'Bagara Rice',
 				'Phulka',
 				'Cucumber Raita',
-				' - ',
 				'Jeera Papad/Pickled',
 				'Rice Kheer',
 				'Tossed Salad'
@@ -77,14 +106,10 @@
 				'Carrot Salad'
 			],
 			[
-				'',
 				'Vegetable Jalfrezi',
-				'',
 				'Lobhia Masala',
-				' - ',
 				'Steamed Rice',
 				'Phulka',
-				' - ',
 				'Fryums/Pickled',
 				'Green Salad'
 			],
@@ -95,7 +120,6 @@
 				'Aloo Paratha',
 				'Curd',
 				'Aachar',
-				'-',
 				'Cornflakes',
 				'Bread/Jam/Butter',
 				'Masala Egg Omelette',
@@ -114,23 +138,24 @@
 			],
 			[
 				'Cucumber',
-				'',
+				' - ',
 				'Aloo Capsicum',
-				'',
+				' - ',
 				'Chana Dal Tadka',
 				'Steamed Rice',
 				'Plain Paratha',
 				'Boondi Raita',
-				'Fryums/Pickled'
+				'Fryums/Pickled',
+                'Gulab Jamun'
 			],
-			['Gulab Jamun', '', 'Missal Pav']
+			['Missal Pav']
 		],
 		thursday: [
 			[
 				'Masala Dosa',
 				'Sambhar',
 				'Coconut Chutney',
-				'',
+				' - ',
 				'Bread/Jam/Butter',
 				'Boiled Egg',
 				'Tea/Coffee/Milk',
@@ -148,9 +173,7 @@
 			],
 			[
 				'Cucumber',
-				'',
 				'Aloo Capsicum',
-				'',
 				'Chana Dal Tadka',
 				'Steamed Rice',
 				'Plain Paratha',
@@ -222,38 +245,6 @@
 				'Fryums/Pickled'
 			],
 			['Meethi Bondi', 'Mysore bonda & tomato chutney']
-		],
-		sunday: [
-			[
-				'Pav',
-				'Bhaji',
-				'Onion & Lemon',
-				'Boiled Corn',
-				'Chocos',
-				'Boiled Egg',
-				'Tea/Coffee/Milk',
-				'Watermelon'
-			],
-			[
-				'Three Bean Salad',
-				'Chole Masala',
-				'Mix Veg Sambar(Pumpkin)',
-				'Steamed Rice',
-				'Puri',
-				'Masala Butter Milk',
-				'Fryums/Pickle'
-			],
-			[
-				'Onion/Cucumber/Lemon',
-				'Fresh Lime Soda(Sweet and Salt)',
-				'Paneer Dum Biryani',
-				'Hyderabad Chicken Biryani',
-				'Mirchi Ka salan',
-				'Bengali Khichdi',
-				'Mix Veg Raita',
-				'Fryums'
-			],
-			['Veg Macaroni']
 		]
 	};
 
@@ -266,53 +257,143 @@
 		selectedDay = day;
 	}
 
-	// let a variable be equal to the seelected day, but if selected day === today then variable = 'today'
 	$: heading = selectedDay === days[today - 1] ? 'today' : selectedDay;
+
+	const abbreviateDay = (day: string) => {
+		return day.slice(0, 3);
+	};
 </script>
 
 <div class="week_day_selector">
 	{#each days as day}
-		<button class:selected={selectedDay === day} on:click={() => selectDay(day)}>{day}</button>
+		<button class:selected={selectedDay === day} on:click={() => selectDay(day)}>
+			<span class="full">{day}</span>
+			<span class="abbr">{abbreviateDay(day)}</span>
+		</button>
 	{/each}
 </div>
 
 <Board is_shown={false} heading="yesterday">
 	<div class="grid">
-		<div>
-			<h4>breakfast</h4>
-			{#each menus[yestDay][0] as item}
-				<p>{item}</p>
-			{/each}
-		</div>
-	</div>
+        <div>
+            <h4>Breakfast</h4>
+            <div class="mobile">
+                {#each menus[yestDay][0] as item}
+                    <p>{item}</p>
+                {/each}
+            </div>
+        </div>
+
+        <div>
+            <h4>Lunch</h4>
+            <div class="mobile">
+                {#each menus[yestDay][1] as item}
+                    <p>{item}</p>
+                {/each}
+            </div>
+        </div>
+
+        <div class="flex">
+            <div>
+                <h4>Snacks</h4>
+                <div class="mobile">
+                    {#each menus[yestDay][3] as item}
+                        <p>{item}</p>
+                    {/each}
+                </div>
+            </div>
+
+            <div>
+                <h4 class="">Dinner</h4>
+                <div class="mobile">
+                    {#each menus[yestDay][2] as item}
+                        <p>{item}</p>
+                    {/each}
+                </div>
+            </div>
+        </div>
 </Board>
 
 <Board heading="{heading}'s menu">
 	<div class="grid">
 		<div>
 			<h4>Breakfast</h4>
-			{#each menus[selectedDay][0] as item}
-				<p>{item}</p>
-			{/each}
+			<div class="mobile">
+				{#each menus[selectedDay][0] as item}
+					<p>{item}</p>
+				{/each}
+			</div>
 		</div>
 
 		<div>
 			<h4>Lunch</h4>
-			{#each menus[selectedDay][1] as item}
-				<p>{item}</p>
-			{/each}
+			<div class="mobile">
+				{#each menus[selectedDay][1] as item}
+					<p>{item}</p>
+				{/each}
+			</div>
+		</div>
+
+		<div class="flex">
+			<div>
+				<h4>Snacks</h4>
+				<div class="mobile">
+					{#each menus[selectedDay][3] as item}
+						<p>{item}</p>
+					{/each}
+				</div>
+			</div>
+
+			<div>
+				<h4 class="">Dinner</h4>
+				<div class="mobile">
+					{#each menus[selectedDay][2] as item}
+						<p>{item}</p>
+					{/each}
+				</div>
+			</div>
+		</div>
+	</div>
+</Board>
+
+<Board heading="tommorrow">
+	<div class="grid">
+		<div>
+			<h4>Breakfast</h4>
+			<div class="mobile">
+				{#each menus[nextDay][0] as item}
+					<p>{item}</p>
+				{/each}
+			</div>
 		</div>
 
 		<div>
-			<h4>Dinner</h4>
-			{#each menus[selectedDay][2] as item}
-				<p>{item}</p>
-			{/each}
+			<h4>Lunch</h4>
+			<div class="mobile">
+				{#each menus[nextDay][1] as item}
+					<p>{item}</p>
+				{/each}
+			</div>
+		</div>
 
-			<h4>Snacks</h4>
-			{#each menus[selectedDay][3] as item}
-				<p>{item}</p>
-			{/each}
+		<div class="flex">
+			<div>
+				<h4>Snacks</h4>
+				<div class="mobile">
+					{#each menus[nextDay][3] as item}
+						<p>{item}</p>
+					{/each}
+				</div>
+			</div>
+
+			<div>
+				<h4 class="">Dinner</h4>
+				<div class="mobile">
+					{#each menus[nextDay][2] as item}
+						<p>{item}</p>
+					{/each}
+				</div>
+			</div>
 		</div>
 	</div>
 </Board>
@@ -321,8 +402,17 @@
 	.grid {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
-		font-size: 1em;
-		gap: 1em;
+		gap: 1rem;
+
+		.flex {
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+		}
+		h4 {
+			margin-bottom: 0.25em;
+			text-decoration: underline;
+		}
 	}
 	.week_day_selector {
 		display: flex;
@@ -330,32 +420,74 @@
 		justify-content: center;
 		margin: 2em auto;
 		margin-bottom: 20px;
-			font-size: 1.4rem;
 
 		button {
+			font-size: 1.4rem !important; /* Ensure font size is applied */
 			border: var(--blue-border);
 			border-right: none;
 			padding: 0.6em;
 			background: var(--blue-gradient);
 			cursor: pointer;
 			color: #151534;
+			text-shadow: 0px 0px 1px white;
+
+			span.full {
+				display: inline;
+			}
+
+			span.abbr {
+				display: none;
+			}
 		}
 
 		button:hover,
 		.selected {
 			background: var(--blue-gradient-selected);
 			color: #fff;
-			// font-weight: 600;
+			font-weight: 600;
 			box-shadow: inset 0 4px 6px rgba(50, 52, 90, 0.2);
+			text-shadow: 0px 0px 1px rgb(39, 35, 51);
 		}
 		button:last-child {
 			border-right: var(--blue-border);
 		}
 	}
 
-    @media (max-width: 600px) {
-        .grid {
-            grid-template-columns: 1fr 1fr;
+	@media (max-width: 600px) {
+		.grid {
+			grid-template-columns: 1fr;
+            font-size: 1.4em;
+            gap: 1rem;
+            .mobile {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            
+            }
+		}
+        .flex {
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
-    }
+        .week_day_selector {
+            flex-wrap: wrap;
+
+			button {
+                width: 6ch;
+				span.full {
+					display: none;
+				}
+
+				span.abbr {
+					display: inline;
+				}
+			}
+        }
+	}
+
+	@media (max-width: 300px) {
+		.grid {
+			grid-template-columns: 1fr;
+		}
+	}
 </style>

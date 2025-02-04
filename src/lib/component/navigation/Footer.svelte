@@ -11,11 +11,11 @@
 
 <style>
 	footer {
+		font-size: 1.2em;
 		display: flex;
 		width: 100%;
 		justify-content: center;
-		margin: 2em auto;
-		margin-bottom: 20px;
+		margin: 2rem auto;
 
 		button {
 			border: var(--main-border-dark);
@@ -23,17 +23,11 @@
 			padding: 0.4em;
 			background: var(--main-gradient);
 			cursor: pointer;
-			font-size: 1rem;
 			color: var(--main-dark);
 		}
 
 		button:hover {
-			background: linear-gradient(
-				180deg,
-				rgba(222, 156, 139, 0.85) 0%,
-				rgba(222, 156, 139, 0.85) 20%,
-				rgb(237, 185, 156) 100%
-			);
+			background:var(--main-gradient-selected);
 			color: rgba(43, 39, 39);
 			/* text-decoration: underline; */
 			font-weight: 500;

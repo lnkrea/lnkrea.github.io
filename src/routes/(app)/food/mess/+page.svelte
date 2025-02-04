@@ -13,7 +13,7 @@
 
 section {
     margin: 10px auto;
-    max-width: 560px;
+    max-width: 580px;
 }
 
 

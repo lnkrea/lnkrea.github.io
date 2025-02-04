@@ -21,7 +21,7 @@
 
 <style lang="scss">
 	main {
-		margin-bottom: 1rem;
+		margin: 0 10px 1em 10px;
 		border: var(--main-border-dark);
 		background-color: #fff;
 		header {
@@ -55,11 +55,8 @@
 		// 	display: grid;
 		// 	// grid-template-columns: 1fr 1fr 1fr;
 		// 	grid-template-rows: auto auto;
-		padding: 1.1rem;
-
-		font-size: 0.9em;
+		padding: 1rem;
+		font-size: 1.3em;
 		color: var(--main-dark);
-
-		font-size: 1.4rem;
 	}
 </style>

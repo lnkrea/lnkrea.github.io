@@ -15,6 +15,11 @@
 
 	<hr />
 
+	<a href="/food/mess"
+		>GO TO MESS MENU
+		<h1>GO TO MESS MENU</h1>
+	</a>
+
 	<Board heading="archives">
 		<div class="grid">
 			<div class="section_child">
@@ -108,7 +113,7 @@
 		grid-template-columns: 1fr 1fr 1fr;
 		grid-template-rows: auto auto;
 	}
-	 @media (max-width: 600px) {
+	@media (max-width: 600px) {
 		.grid {
 			grid-template-columns: 1fr 1fr;
 		}
@@ -144,5 +149,4 @@
 			// font-weight: 500;
 		}
 	}
-
 </style>
