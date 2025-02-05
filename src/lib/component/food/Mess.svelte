@@ -161,7 +161,7 @@
     .grid {
       grid-template-columns: 1fr;
       gap: 2em;
-      font-size: 1.1em !important;
+      font-size: 1.4rem !important;
       .mobile {
         // font-size: 0.9em !important;
         display: grid;
