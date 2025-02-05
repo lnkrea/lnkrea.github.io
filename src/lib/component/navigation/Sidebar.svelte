@@ -1,5 +1,5 @@
 <script lang="ts">
-	export let heading: string;
+	export let heading: string = "board";
 
 	export let is_shown: boolean = true;
 	</script>
@@ -21,9 +21,12 @@
 
 <style lang="scss">
 	main {
-		margin: 0 10px 1em 10px;
+		margin: 0 auto 2em auto;
 		border: var(--main-border-dark);
 		background-color: #fff;
+		width: 100%;
+
+		border-radius: 0.1em;
 		header {
 			display: flex;
 			justify-content: space-between;
@@ -59,4 +62,5 @@
 		font-size: 1.3em;
 		color: var(--main-dark);
 	}
+
 </style>
