@@ -162,17 +162,25 @@
       grid-template-columns: 1fr;
       gap: 2rem;
       font-size: 1.4rem !important;
-      .mobile {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-      font-size: 1.4rem !important;
-      }
     }
+
+    .mobile {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      font-size: 1.4rem !important;
+    }
+
     .flex {
       flex-direction: row;
       flex-wrap: wrap;
       gap: 2rem !important;
+      font-size: 1.4rem !important; /* Ensure consistent font size */
     }
+
+    .flex h2, .flex h3, .flex h4, .flex h5, .flex h6 {
+      font-size: inherit !important; /* Inherit font size from .flex */
+    }
+
     .week_day_selector {
       flex-wrap: wrap;
 
@@ -193,5 +201,13 @@
     .grid {
       grid-template-columns: 1fr;
     }
+  }
+
+  .flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem !important;
+    font-size: 1.4rem; /* Ensure consistent font size */
   }
 </style>
