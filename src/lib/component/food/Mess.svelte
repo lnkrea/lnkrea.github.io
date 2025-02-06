@@ -163,9 +163,9 @@
       gap: 2rem;
       font-size: 1.4rem !important;
       .mobile {
-        // font-size: 0.9em !important;
         display: grid;
         grid-template-columns: 1fr 1fr;
+      font-size: 1.4rem !important;
       }
     }
     .flex {
