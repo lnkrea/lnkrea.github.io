@@ -172,7 +172,6 @@
       flex-direction: row;
       flex-wrap: wrap;
       gap: 2rem !important;
-      font-size: 1.4rem !important;
     }
     .week_day_selector {
       flex-wrap: wrap;
