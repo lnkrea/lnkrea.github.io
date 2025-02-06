@@ -160,7 +160,7 @@
   @media (max-width: 600px) {
     .grid {
       grid-template-columns: 1fr;
-      gap: 2em;
+      gap: 2rem;
       font-size: 1.4rem !important;
       .mobile {
         // font-size: 0.9em !important;
@@ -171,7 +171,8 @@
     .flex {
       flex-direction: row;
       flex-wrap: wrap;
-      gap: 2rem;
+      gap: 2rem !important;
+      font-size: 1.4rem !important;
     }
     .week_day_selector {
       flex-wrap: wrap;

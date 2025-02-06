@@ -1,10 +1,12 @@
 <script>
-  import Header from '$lib/component/navigation/Header.svelte';
+  import Footer from '../lib/component/navigation/Footer.svelte'
     import '../app.css'
 </script>
 
-<Header />
+<!-- <Header /> -->
 
 <slot>
 
 </slot>
+
+<Footer />

@@ -12,7 +12,7 @@
         height: 100vh;
 
         color: var(--main-dark);
-            font-size: 4em;
+            font-size: 5em;
         h1 {
             margin-bottom: 0;
         }
