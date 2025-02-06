@@ -158,6 +158,9 @@
   }
 
   @media (max-width: 600px) {
+    h4 {
+      font:  1.4rem !important; /* Ensure consistent font size */
+    }
     .grid {
       grid-template-columns: 1fr;
       gap: 2rem;
